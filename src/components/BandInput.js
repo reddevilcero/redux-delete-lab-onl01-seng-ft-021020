@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import uuid from "uuid";
 
 class BandInput extends Component {
-
   state = {
-    bandName: ''
-  }
+    bandName: "",
+  };
 
   handleOnChange(event) {
     this.setState({
@@ -16,7 +16,7 @@ class BandInput extends Component {
     event.preventDefault();
     this.props.addBand(this.state.bandName);
     this.setState({
-      bandName: '',
+      bandName: "",
     });
   }
 
@@ -27,12 +27,13 @@ class BandInput extends Component {
           <input
             type="text"
             value={this.state.bandName}
-            onChange={(event) => this.handleOnChange(event)} />
+            onChange={(event) => this.handleOnChange(event)}
+          />
           <input type="submit" />
         </form>
       </div>
     );
   }
-};
+}
 
 export default BandInput;
